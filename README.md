@@ -24,3 +24,5 @@ demo首页菜单.png
 demo整体效果展示动画.gif
 <br>
 ![效果展示](https://github.com/DevLiYang/LYCustomTransition/blob/master/Image/效果展示.gif)
+
+`如果看了本demo及文章能对你有所帮助的小伙伴们，那就来颗星吧！O(∩_∩)O哈哈~`
