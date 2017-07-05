@@ -14,10 +14,12 @@
 四、基础转场-交互式
 五、实战 - 网友提问 - Question One
 ```
-<br><br>
+<br>
 demo首页菜单.png
+<br>
 ![首页菜单](https://github.com/DevLiYang/LYCustomTransition/blob/master/Image/首页菜单.png)
 
-<br><br>
+<br>
 demo整体效果展示动画.gif
+<br>
 ![效果展示](https://github.com/DevLiYang/LYCustomTransition/blob/master/Image/效果展示.gif)
