@@ -43,12 +43,7 @@
 
 - (void)interactiveTransitionRecognizerAction:(UIPanGestureRecognizer *)gestureRecognizer
 {
-    CGPoint translation = [gestureRecognizer translationInView:gestureRecognizer.view];
-    
-    CGFloat scale = 1 - fabs(translation.x / kScreenWidth);
-    scale = scale < 0 ? 0 : scale;
-    
-    NSLog(@"second = %f", scale);
+
     switch (gestureRecognizer.state) {
         case UIGestureRecognizerStatePossible:
             break;

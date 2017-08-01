@@ -46,10 +46,12 @@
 {
     CGPoint translation = [gestureRecognizer translationInView:gestureRecognizer.view];
 
-    CGFloat scale = 1 - fabs(translation.y / kScreenHeight);
+    CGFloat scale = 1 - (translation.y / kScreenHeight);
     scale = scale < 0 ? 0 : scale;
+    scale = scale > 1 ? 1 :scale;
     
     NSLog(@"second = %f", scale);
+    
     switch (gestureRecognizer.state) {
         case UIGestureRecognizerStatePossible:
             break;
@@ -79,7 +81,7 @@
         case UIGestureRecognizerStateCancelled:
         case UIGestureRecognizerStateEnded: {
             
-            if (scale > 0.95f) {
+            if (scale > 0.9f) {
                 [UIView animateWithDuration:0.2 animations:^{
                     
                     self.imgView.center = self.transitionImgViewCenter;

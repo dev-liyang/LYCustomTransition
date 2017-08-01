@@ -47,25 +47,26 @@
 
 - (CGFloat)percentForGesture:(UIPanGestureRecognizer *)gesture
 {
-//    UIView *transitionContainerView = self.transitionContext.containerView;
-//    
-//    CGPoint locationInSourceView = [gesture locationInView:transitionContainerView];
-//    
-//    CGFloat height = CGRectGetHeight(transitionContainerView.bounds);
-//    
-//    return locationInSourceView.y / height;
     
     CGPoint translation = [gesture translationInView:gesture.view];
     
-    CGFloat scale = 1 - fabs(translation.y / kScreenHeight);
+    NSLog(@"translation.y = %f", translation.y);
+    
+    NSLog(@"直接除 = %f", translation.y / kScreenHeight);
+    NSLog(@"绝对值 = %f", fabs(translation.y / kScreenHeight));
+    
+    
+    CGFloat scale = 1-(translation.y / kScreenHeight);
+    
     scale = scale < 0 ? 0 : scale;
+    scale = scale > 1 ? 1 :scale;
+    
     return scale;
 }
 
 - (void)gestureRecognizeDidUpdate:(UIPanGestureRecognizer *)gestureRecognizer
 {
-    CGFloat scrale = [self percentForGesture:gestureRecognizer];
-    NSLog(@"interactive %f",scrale);
+    CGFloat scale = [self percentForGesture:gestureRecognizer];
     
     if (_isFirst) {
         [self beginInterPercent];
@@ -80,20 +81,21 @@
             break;
         case UIGestureRecognizerStateChanged:
             
-            [self updateInteractiveTransition:[self percentForGesture:gestureRecognizer]];
-            [self updateInterPercent:[self percentForGesture:gestureRecognizer]];
+            [self updateInteractiveTransition:scale];
+            [self updateInterPercent:scale];
             
             break;
         case UIGestureRecognizerStateEnded:
             
-            if (scrale > 0.95f){
+            if (scale > 0.9f){
                 
                 [self cancelInteractiveTransition];
                 [self interPercentCancel];
             }
             else{
+                
                 [self finishInteractiveTransition];
-                [self interPercentFinish:scrale];
+                [self interPercentFinish:scale];
             }
             break;
         default:

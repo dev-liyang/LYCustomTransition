@@ -39,19 +39,20 @@
     [self.gestureRecognizer removeTarget:self action:@selector(gestureRecognizeDidUpdate:)];
 }
 
+//滑动的距离所占屏幕的比例
 - (CGFloat)percentForGesture:(UIPanGestureRecognizer *)gesture
 {
-    
     CGPoint translation = [gesture translationInView:gesture.view];
     
-    CGFloat scale = 1 - fabs(translation.x / kScreenWidth);
+    CGFloat scale = translation.x / kScreenWidth;
+    
     scale = scale < 0 ? 0 : scale;
+    
     return scale;
 }
 - (void)gestureRecognizeDidUpdate:(UIPanGestureRecognizer *)gestureRecognizer
 {
-    CGFloat scale = 1 - [self percentForGesture:gestureRecognizer];
-    NSLog(@"interactive %f",scale);
+    CGFloat scale = [self percentForGesture:gestureRecognizer];
     
     switch (gestureRecognizer.state)
     {
