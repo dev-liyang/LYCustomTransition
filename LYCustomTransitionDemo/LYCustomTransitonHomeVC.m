@@ -8,19 +8,24 @@
 
 #import "LYCustomTransitonHomeVC.h"
 
-#import "LYCATransitionFirstVC.h"
+#import "LYNavCATransitionFirstVC.h"
+#import "LYModalCATransitionFirstVC.h"
 
 #import "LYNavBaseVC.h"
-#import "LYNavImitateKugouVC.h"
+#import "LYNavKugouVC.h"
 #import "LYNavWeChatVC.h"
+#import "LYNavBaseInteractiveVC.h"
 #import "LYNavKuGouInteractiveVC.h"
 #import "LYNavWeChatInteractiveVC.h"
 
-#import "LYModelBaseVC.h"
-#import "LYModelKuGouVC.h"
+#import "LYModalBaseVC.h"
+#import "LYModalKuGouVC.h"
 #import "LYModalWeChatVC.h"
 #import "LYModalKuGouInteractiveVC.h"
 #import "LYModalWeChatInteractiveVC.h"
+
+#import "LYQuestionsOneFirstVC.h"
+
 
 @interface LYCustomTransitonHomeVC ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -40,13 +45,15 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.title = @"Home";
     
-    _sectionTitleArr = @[@"CATransition", @"导航 转场", @"模态 转场"];
+    _sectionTitleArr = @[@"CATransition", @"导航 Navigation-Transition", @"模态 Modal-Transition", @"网友提问"];
     _showDataArr = @[
-                     @[@"CATransition"],
+                     @[@"Nav-CATransition",
+                       @"Modal-CATransition"],
                      
-                     @[@"基础转场",
+                     @[@"基础转场-非交互式",
                        @"仿酷狗转场-非交互式",
                        @"仿微信、苹果系统图片浏览转场-非交互式",
+                       @"基础转场-交互式",
                        @"仿酷狗转场-交互式",
                        @"仿微信、苹果系统图片浏览转场-交互式"],
                      
@@ -54,23 +61,29 @@
                        @"仿酷狗转场-非交互式",
                        @"仿微信、苹果系统图片浏览转场-非交互式",
                        @"仿酷狗转场-交互式",
-                       @"仿微信、苹果系统图片浏览转场-交互式"]
+                       @"仿微信、苹果系统图片浏览转场-交互式"],
+                     
+                     @[@"Question-one"]
                      ];
     
     _vcClassArr = @[
-                    @[@"LYCATransitionFirstVC"],
+                    @[@"LYNavCATransitionFirstVC",
+                      @"LYModalCATransitionFirstVC"],
                     
                     @[@"LYNavBaseVC",
-                      @"LYNavImitateKugouVC",
+                      @"LYNavKugouVC",
                       @"LYNavWeChatVC",
+                      @"LYNavBaseInteractiveVC",
                       @"LYNavKuGouInteractiveVC",
                       @"LYNavWeChatInteractiveVC"],
                     
-                    @[@"LYModelBaseVC",
-                      @"LYModelKuGouVC",
+                    @[@"LYModalBaseVC",
+                      @"LYModalKuGouVC",
                       @"LYModalWeChatVC",
                       @"LYModalKuGouInteractiveVC",
-                      @"LYModalWeChatInteractiveVC"]
+                      @"LYModalWeChatInteractiveVC"],
+                    
+                    @[@"LYQuestionsOneFirstVC"]
                     ];
     
     [self createUI];
@@ -142,7 +155,6 @@
     
     return view;
 }
-
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {

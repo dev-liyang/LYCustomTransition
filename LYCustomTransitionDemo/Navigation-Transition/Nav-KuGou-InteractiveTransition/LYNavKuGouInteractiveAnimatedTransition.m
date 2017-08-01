@@ -7,14 +7,14 @@
 //
 
 #import "LYNavKuGouInteractiveAnimatedTransition.h"
-#import "LYNavImitateKuGouPushAnimator.h"
-#import "LYNavImitateKuGouPopAnimator.h"
+#import "LYNavKuGouPushAnimator.h"
+#import "LYNavKuGouPopAnimator.h"
 #import "LYNavKuGouPercentDerivenInteractive.h"
 
 @interface LYNavKuGouInteractiveAnimatedTransition ()
 
-@property (nonatomic, strong) LYNavImitateKuGouPushAnimator *customPush;
-@property (nonatomic, strong) LYNavImitateKuGouPopAnimator  *customPop;
+@property (nonatomic, strong) LYNavKuGouPushAnimator *customPush;
+@property (nonatomic, strong) LYNavKuGouPopAnimator  *customPop;
 @property (nonatomic, strong) LYNavKuGouPercentDerivenInteractive  *percentIntractive;
 
 @end
@@ -47,17 +47,17 @@
 - (void)setGestureRecognizer:(UIPanGestureRecognizer *)gestureRecognizer{
     _gestureRecognizer = gestureRecognizer;
 }
--(LYNavImitateKuGouPushAnimator *)customPush
+-(LYNavKuGouPushAnimator *)customPush
 {
     if (_customPush == nil) {
-        _customPush = [[LYNavImitateKuGouPushAnimator alloc]init];
+        _customPush = [[LYNavKuGouPushAnimator alloc]init];
     }
     return _customPush;
 }
 
-- (LYNavImitateKuGouPopAnimator *)customPop {
+- (LYNavKuGouPopAnimator *)customPop {
     if (!_customPop) {
-        _customPop = [[LYNavImitateKuGouPopAnimator alloc] init];
+        _customPop = [[LYNavKuGouPopAnimator alloc] init];
     }
     return _customPop;
 }
