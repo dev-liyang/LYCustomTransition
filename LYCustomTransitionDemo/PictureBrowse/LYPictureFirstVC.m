@@ -7,12 +7,9 @@
 //
 
 #import "LYPictureFirstVC.h"
-#import "LYPictureBrowseSouceModel.h"
 #import "LYPictureFirstPageCell.h"
-#import "LYPictureBrowseViewController.h"
 
-#import "LYPictureBrowseInteractiveAnimatedTransition.h"
-#import "LYPictureBrowseTransitionParameter.h"
+#import "LYPictureBrowse.h"
 
 #define CellImageSize (kScreenWidth - 2 * 5)/ 3.0
 
@@ -62,6 +59,19 @@
         
         [self.imageDataArray addObject:imgDic];
     }
+    //构造图片数据
+    for (int i = 1; i <= 11; i ++) {
+        
+        NSString *path = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"Expression%.2d",i] ofType:@"jpeg"];
+        UIImage *img = [UIImage imageWithContentsOfFile:path];
+        
+        NSDictionary *imgDic = @{@"image" : img,
+                                 //@"imgUrl" : [NSString stringWithFormat:@"https://xxx.jpg",i],
+                                 //@"imgUrl_thumb" : [NSString stringWithFormat:@"https://xxx_thumb.jpg",i]
+                                 };
+        
+        [self.imageDataArray addObject:imgDic];
+    }
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -86,15 +96,6 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    //拿到当前所有cell上的图片，用于查看图片完成，返回到页面时会用到的图片的frame
-    [self.pictureImageViews removeAllObjects];
-    for (int i = 0; i < _imageDataArray.count; i ++) {
-        
-        NSIndexPath *indPath = [NSIndexPath indexPathForItem:i inSection:0];
-        LYPictureFirstPageCell * cell = (LYPictureFirstPageCell *)[_collectionView cellForItemAtIndexPath:indPath];
-        [_pictureImageViews addObject:cell.imageView];
-    }
-    
     LYPictureFirstPageCell * cell = (LYPictureFirstPageCell *)[_collectionView cellForItemAtIndexPath:indexPath];
     
     NSInteger index = indexPath.row;
@@ -102,19 +103,26 @@
     //封装参数对象
     LYPictureBrowseTransitionParameter *transitionParameter = [[LYPictureBrowseTransitionParameter alloc] init];
     transitionParameter.transitionImage = cell.imageView.image;
-    transitionParameter.firstVCImgFrames = [self pictureFrames];
+    transitionParameter.firstVCImgFrames = [self firstImageViewFrames];
     transitionParameter.transitionImgIndex = index;
     self.animatedTransition = nil;
     self.animatedTransition.transitionParameter = transitionParameter;
-    
+
     //传输必要参数
     LYPictureBrowseViewController *pictVC = [[LYPictureBrowseViewController alloc] init];
     pictVC.dataSouceArray = [self browseSouceModelItemArray];
     pictVC.animatedTransition = self.animatedTransition;
-    
+
     //设置代理
     pictVC.transitioningDelegate = self.animatedTransition;
     [self presentViewController:pictVC animated:YES completion:nil];
+    
+
+//    ///无交互动画方式
+//    LYPictureBrowseViewController *pictVC = [[LYPictureBrowseViewController alloc] init];
+//    pictVC.dataSouceArray = [self browseSouceModelItemArray];
+//    [self presentViewController:pictVC animated:YES completion:nil];
+    
 }
 
 #pragma mark - Setter and getter
@@ -130,7 +138,6 @@
         _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 64, kScreenWidth, kScreenHeight - 64) collectionViewLayout:flowLayout];
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
-        _collectionView.pagingEnabled = YES;
         _collectionView.alwaysBounceVertical = YES;
         _collectionView.backgroundColor = [UIColor clearColor];
         [_collectionView registerClass:[LYPictureFirstPageCell class] forCellWithReuseIdentifier:NSStringFromClass([LYPictureFirstPageCell class])];
@@ -154,15 +161,26 @@
 
 #pragma mark - Custom
 //构造图片Frame数组
-- (NSArray<NSValue *> *)pictureFrames {
-    NSMutableArray *frames = [NSMutableArray new];
-    for (UIImageView *pictureImageView in self.pictureImageViews) {
+- (NSArray<NSValue *> *)firstImageViewFrames{
+    
+    NSMutableArray *imageFrames = [NSMutableArray new];
+    for (int i = 0; i < _imageDataArray.count; i ++) {
         
-        //获取当前view在Window上的frame
-        CGRect frame = [self getFrameInWindow:pictureImageView];
-        [frames addObject:[NSValue valueWithCGRect:frame]];
+        NSIndexPath *indexPath = [NSIndexPath indexPathForItem:i inSection:0];
+        LYPictureFirstPageCell * cell = (LYPictureFirstPageCell *)[_collectionView cellForItemAtIndexPath:indexPath];
+        
+        if (cell.imageView) {
+            //获取当前view在Window上的frame
+            CGRect frame = [self getFrameInWindow:cell.imageView];
+            [imageFrames addObject:[NSValue valueWithCGRect:frame]];
+            
+        }else{//当前不可见的cell,frame设为CGRectZero添加到数组中,防止数组越界
+            CGRect frame = CGRectZero;
+            [imageFrames addObject:[NSValue valueWithCGRect:frame]];
+        }
     }
-    return frames;
+
+    return imageFrames;
 }
 
 //构造图片模型数组

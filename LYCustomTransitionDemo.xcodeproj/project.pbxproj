@@ -167,6 +167,7 @@
 		B63F13FF1F0C902300AE7591 /* LYQuestionsOneSecondVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYQuestionsOneSecondVC.h; sourceTree = "<group>"; };
 		B63F14001F0C902300AE7591 /* LYQuestionsOneSecondVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYQuestionsOneSecondVC.m; sourceTree = "<group>"; };
 		B64E097B1FDE5C25001BF275 /* nodata.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nodata.png; sourceTree = "<group>"; };
+		B64E097E1FDE7B5D001BF275 /* LYPictureBrowse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYPictureBrowse.h; sourceTree = "<group>"; };
 		B65847251EFA500400E9C702 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B65847281EFA507300E9C702 /* LYModalCATransitionFirstVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYModalCATransitionFirstVC.h; sourceTree = "<group>"; };
 		B65847291EFA507300E9C702 /* LYModalCATransitionFirstVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYModalCATransitionFirstVC.m; sourceTree = "<group>"; };
@@ -621,6 +622,7 @@
 		B691EB501FD638900075532B /* LYPictureBrowse */ = {
 			isa = PBXGroup;
 			children = (
+				B64E097E1FDE7B5D001BF275 /* LYPictureBrowse.h */,
 				B691EB511FD638900075532B /* Controller */,
 				B691EB541FD638900075532B /* Model */,
 				B691EB571FD638900075532B /* View */,
