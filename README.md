@@ -19,7 +19,7 @@ iOS自定义交互式转场动画-仿微信图片浏览器转场动画、仿ios�
 <br><br>
 demo首页菜单.png
 <br>
-![首页菜单](https://github.com/DevLiYang/LYCustomTransition/blob/master/Image/首页菜单.png)
+![首页菜单](https://github.com/DevLiYang/LYCustomTransition/blob/master/Image/home-menu.png)
 <br><br>
 demo整体效果展示动画.gif
 <br>
