@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		456A21A820010A8A00FEAD1D /* LYQuestionTwoAnimationTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 456A219E20010A8900FEAD1D /* LYQuestionTwoAnimationTransition.m */; };
+		456A21A920010A8A00FEAD1D /* LYQuestionTwoPopAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 456A21A020010A8900FEAD1D /* LYQuestionTwoPopAnimator.m */; };
+		456A21AA20010A8A00FEAD1D /* LYQuestionTwoFirstVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 456A21A420010A8900FEAD1D /* LYQuestionTwoFirstVC.m */; };
+		456A21AB20010A8A00FEAD1D /* LYQuestionTwoSecondVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 456A21A520010A8900FEAD1D /* LYQuestionTwoSecondVC.m */; };
+		456A21AC20010A8A00FEAD1D /* LYQuestionTwoPushAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 456A21A620010A8900FEAD1D /* LYQuestionTwoPushAnimator.m */; };
+		456A21AE20010C5700FEAD1D /* content.png in Resources */ = {isa = PBXBuildFile; fileRef = 456A21AD20010C5700FEAD1D /* content.png */; };
+		456A21B020010C6F00FEAD1D /* flip.png in Resources */ = {isa = PBXBuildFile; fileRef = 456A21AF20010C6F00FEAD1D /* flip.png */; };
 		B634A89D1F01F9580014AB7C /* LYNavKuGouAnimationTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = B634A8941F01F9580014AB7C /* LYNavKuGouAnimationTransition.m */; };
 		B634A89E1F01F9580014AB7C /* LYNavKuGouPopAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = B634A8961F01F9580014AB7C /* LYNavKuGouPopAnimator.m */; };
 		B634A89F1F01F9580014AB7C /* LYNavKuGouPushAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = B634A8981F01F9580014AB7C /* LYNavKuGouPushAnimator.m */; };
@@ -126,6 +133,18 @@
 /* Begin PBXFileReference section */
 		008A0845A3D7E3664E545FD1 /* Pods_LYCustomTransitionDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LYCustomTransitionDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		217ED3A49F6321C701504EC7 /* Pods-LYCustomTransitionDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYCustomTransitionDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LYCustomTransitionDemo/Pods-LYCustomTransitionDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		456A219E20010A8900FEAD1D /* LYQuestionTwoAnimationTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYQuestionTwoAnimationTransition.m; sourceTree = "<group>"; };
+		456A219F20010A8900FEAD1D /* LYQuestionTwoFirstVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYQuestionTwoFirstVC.h; sourceTree = "<group>"; };
+		456A21A020010A8900FEAD1D /* LYQuestionTwoPopAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYQuestionTwoPopAnimator.m; sourceTree = "<group>"; };
+		456A21A120010A8900FEAD1D /* LYQuestionTwoSecondVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYQuestionTwoSecondVC.h; sourceTree = "<group>"; };
+		456A21A220010A8900FEAD1D /* LYQuestionTwoPushAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYQuestionTwoPushAnimator.h; sourceTree = "<group>"; };
+		456A21A320010A8900FEAD1D /* LYQuestionTwoPopAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYQuestionTwoPopAnimator.h; sourceTree = "<group>"; };
+		456A21A420010A8900FEAD1D /* LYQuestionTwoFirstVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYQuestionTwoFirstVC.m; sourceTree = "<group>"; };
+		456A21A520010A8900FEAD1D /* LYQuestionTwoSecondVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYQuestionTwoSecondVC.m; sourceTree = "<group>"; };
+		456A21A620010A8900FEAD1D /* LYQuestionTwoPushAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYQuestionTwoPushAnimator.m; sourceTree = "<group>"; };
+		456A21A720010A8900FEAD1D /* LYQuestionTwoAnimationTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYQuestionTwoAnimationTransition.h; sourceTree = "<group>"; };
+		456A21AD20010C5700FEAD1D /* content.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = content.png; sourceTree = "<group>"; };
+		456A21AF20010C6F00FEAD1D /* flip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flip.png; sourceTree = "<group>"; };
 		B634A8931F01F9580014AB7C /* LYNavKuGouAnimationTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYNavKuGouAnimationTransition.h; sourceTree = "<group>"; };
 		B634A8941F01F9580014AB7C /* LYNavKuGouAnimationTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYNavKuGouAnimationTransition.m; sourceTree = "<group>"; };
 		B634A8951F01F9580014AB7C /* LYNavKuGouPopAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYNavKuGouPopAnimator.h; sourceTree = "<group>"; };
@@ -340,6 +359,23 @@
 				008A0845A3D7E3664E545FD1 /* Pods_LYCustomTransitionDemo.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		456A219D2001098600FEAD1D /* Questions-two */ = {
+			isa = PBXGroup;
+			children = (
+				456A219F20010A8900FEAD1D /* LYQuestionTwoFirstVC.h */,
+				456A21A420010A8900FEAD1D /* LYQuestionTwoFirstVC.m */,
+				456A21A120010A8900FEAD1D /* LYQuestionTwoSecondVC.h */,
+				456A21A520010A8900FEAD1D /* LYQuestionTwoSecondVC.m */,
+				456A21A720010A8900FEAD1D /* LYQuestionTwoAnimationTransition.h */,
+				456A219E20010A8900FEAD1D /* LYQuestionTwoAnimationTransition.m */,
+				456A21A220010A8900FEAD1D /* LYQuestionTwoPushAnimator.h */,
+				456A21A620010A8900FEAD1D /* LYQuestionTwoPushAnimator.m */,
+				456A21A320010A8900FEAD1D /* LYQuestionTwoPopAnimator.h */,
+				456A21A020010A8900FEAD1D /* LYQuestionTwoPopAnimator.m */,
+			);
+			path = "Questions-two";
 			sourceTree = "<group>";
 		};
 		B634A8921F01F9580014AB7C /* Nav-KuGouTransiton */ = {
@@ -585,6 +621,8 @@
 				B664221A1E607A3900AA95C2 /* wechat.jpg */,
 				B66422181E607A3900AA95C2 /* kugou-Interactive.jpeg */,
 				B66422191E607A3900AA95C2 /* Wechat-Interactive.jpeg */,
+				456A21AF20010C6F00FEAD1D /* flip.png */,
+				456A21AD20010C5700FEAD1D /* content.png */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -772,6 +810,7 @@
 			isa = PBXGroup;
 			children = (
 				B63F13F41F0C902300AE7591 /* Questions-one */,
+				456A219D2001098600FEAD1D /* Questions-two */,
 			);
 			path = "Net-Friends-Questions";
 			sourceTree = "<group>";
@@ -895,11 +934,13 @@
 				B6991B471EFA4CAA00F1EAE4 /* BeautyCar01.jpg in Resources */,
 				B65847261EFA500400E9C702 /* Main.storyboard in Resources */,
 				B664224F1E607A3900AA95C2 /* Expression09.jpeg in Resources */,
+				456A21AE20010C5700FEAD1D /* content.png in Resources */,
 				B664224D1E607A3900AA95C2 /* Expression07.jpeg in Resources */,
 				B66421811E607A1800AA95C2 /* Assets.xcassets in Resources */,
 				B6991B4B1EFA4CAA00F1EAE4 /* BeautyCar05.jpg in Resources */,
 				B66422511E607A3900AA95C2 /* Expression11.jpeg in Resources */,
 				B64E097C1FDE5C25001BF275 /* nodata.png in Resources */,
+				456A21B020010C6F00FEAD1D /* flip.png in Resources */,
 				B66422501E607A3900AA95C2 /* Expression10.jpeg in Resources */,
 				B664224E1E607A3900AA95C2 /* Expression08.jpeg in Resources */,
 				B66422451E607A3900AA95C2 /* Base.png in Resources */,
@@ -999,9 +1040,11 @@
 				B63F14051F0C902300AE7591 /* LYQuestionsOnePushAnimator.m in Sources */,
 				B65847321EFA507300E9C702 /* LYModalCATransitionSecondVC.m in Sources */,
 				B63F14041F0C902300AE7591 /* LYQuestionsOnePopAnimator.m in Sources */,
+				456A21AB20010A8A00FEAD1D /* LYQuestionTwoSecondVC.m in Sources */,
 				B664223D1E607A3900AA95C2 /* LYNavKuGouInteractiveVC.m in Sources */,
 				B634A8B01F01F9600014AB7C /* LYNavWeChatSecondVC.m in Sources */,
 				B63F14021F0C902300AE7591 /* LYQuestionsOneAnimationTrasition.m in Sources */,
+				456A21A920010A8A00FEAD1D /* LYQuestionTwoPopAnimator.m in Sources */,
 				B664223F1E607A3900AA95C2 /* LYNavWeChatInteractiveAnimatedTransition.m in Sources */,
 				B6DBFE401F025C2600301429 /* LYModalKuGouAnimationTransition.m in Sources */,
 				B65847311EFA507300E9C702 /* LYModalCATransitionFirstVC.m in Sources */,
@@ -1023,10 +1066,12 @@
 				B634A8AD1F01F9600014AB7C /* LYNavWeChatAnimationTransition.m in Sources */,
 				B6DBFE451F025C2600301429 /* LYModalKuGouInteractiveVC.m in Sources */,
 				B634A8A01F01F9580014AB7C /* LYNavKugouSecondVC.m in Sources */,
+				456A21AC20010A8A00FEAD1D /* LYQuestionTwoPushAnimator.m in Sources */,
 				B66422301E607A3900AA95C2 /* LYNavBaseVC.m in Sources */,
 				B6DBFE461F025C2600301429 /* LYModalKuGouPercentDerivenInteractive.m in Sources */,
 				B691EB5F1FD638900075532B /* LYPictureBrowserCell.m in Sources */,
 				B691EB621FD639DE0075532B /* LYPictureFirstPageCell.m in Sources */,
+				456A21AA20010A8A00FEAD1D /* LYQuestionTwoFirstVC.m in Sources */,
 				B634A8B51F01FA500014AB7C /* LYNavBaseInteractiveVC.m in Sources */,
 				B691EB4F1FD638100075532B /* LYPictureFirstVC.m in Sources */,
 				B634A89D1F01F9580014AB7C /* LYNavKuGouAnimationTransition.m in Sources */,
@@ -1036,6 +1081,7 @@
 				B691EB691FD63BDE0075532B /* LYPictureBrowsePercentDrivenInteractive.m in Sources */,
 				B634A89E1F01F9580014AB7C /* LYNavKuGouPopAnimator.m in Sources */,
 				B63F14061F0C902300AE7591 /* LYQuestionsOneSecondVC.m in Sources */,
+				456A21A820010A8A00FEAD1D /* LYQuestionTwoAnimationTransition.m in Sources */,
 				B664221D1E607A3900AA95C2 /* LYCustomTransitonHomeVC.m in Sources */,
 				B6DBFE4A1F025C2600301429 /* LYModalWeChatInteractiveAnimatedTransition.m in Sources */,
 				B63F14011F0C902300AE7591 /* LYQuestionOneCell.m in Sources */,

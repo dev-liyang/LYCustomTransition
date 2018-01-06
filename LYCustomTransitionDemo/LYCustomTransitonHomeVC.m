@@ -25,6 +25,7 @@
 #import "LYModalWeChatInteractiveVC.h"
 
 #import "LYQuestionsOneFirstVC.h"
+#import "LYQuestionTwoFirstVC.h"
 
 #import "LYPictureFirstVC.h"
 
@@ -66,7 +67,8 @@
                        @"仿酷狗转场-交互式",
                        @"仿微信、苹果系统图片浏览转场-交互式"],
                      
-                     @[@"Question-one"],
+                     @[@"Question-one-仿淘宝有好货详情转场动画",
+                       @"Question-two-仿掌阅转场动画"],
                      
                      @[@"PictureBrowse"]
                      ];
@@ -88,7 +90,8 @@
                       @"LYModalKuGouInteractiveVC",
                       @"LYModalWeChatInteractiveVC"],
                     
-                    @[@"LYQuestionsOneFirstVC"],
+                    @[@"LYQuestionsOneFirstVC",
+                      @"LYQuestionTwoFirstVC"],
                     
                     @[@"LYPictureFirstVC"]
                     ];
