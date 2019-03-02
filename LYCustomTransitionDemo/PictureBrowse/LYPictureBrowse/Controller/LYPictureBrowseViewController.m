@@ -24,13 +24,15 @@
 #pragma mark - Life Cycle
 - (void)viewWillDisappear:(BOOL)animated{
     [self.navigationController setNavigationBarHidden:NO animated:animated];
-    
+    [[UIApplication sharedApplication] setStatusBarHidden:NO animated:animated];
     [super viewWillDisappear:animated];
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
     [self.navigationController setNavigationBarHidden:YES animated:animated];
+    
+    [[UIApplication sharedApplication] setStatusBarHidden:YES animated:animated];
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -42,8 +44,7 @@
     //指定对应图片
     [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:self.animatedTransition.transitionParameter.transitionImgIndex inSection:0] atScrollPosition:UICollectionViewScrollPositionLeft animated:YES];
     
-    //隐藏状态栏
-    [self prefersStatusBarHidden];
+    [[UIApplication sharedApplication] setStatusBarHidden:YES animated:YES];
     
     //添加滑动手势
     UIPanGestureRecognizer *interactiveTransitionRecognizer;
@@ -184,11 +185,6 @@
     self.imgView.image = cell.pictureImageScrollView.zoomImageView.image;
     self.imgView.hidden = YES;
     self.transitionImgViewCenter = _imgView.center;
-}
-
-- (BOOL)prefersStatusBarHidden
-{
-    return YES;
 }
 
 @end
