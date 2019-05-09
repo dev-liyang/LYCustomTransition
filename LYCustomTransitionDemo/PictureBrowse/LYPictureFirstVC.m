@@ -47,7 +47,7 @@
     self.imageDataArray = [NSMutableArray array];
     
     //构造图片数据
-    for (int i = 1; i <= 11; i ++) {
+    for (int i = 1; i <= 13; i ++) {
         
         NSString *path = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"Expression%.2d",i] ofType:@"jpeg"];
         UIImage *img = [UIImage imageWithContentsOfFile:path];
@@ -60,7 +60,7 @@
         [self.imageDataArray addObject:imgDic];
     }
     //构造图片数据
-    for (int i = 1; i <= 11; i ++) {
+    for (int i = 1; i <= 13; i ++) {
         
         NSString *path = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"Expression%.2d",i] ofType:@"jpeg"];
         UIImage *img = [UIImage imageWithContentsOfFile:path];

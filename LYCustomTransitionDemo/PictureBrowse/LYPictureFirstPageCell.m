@@ -27,6 +27,8 @@
 - (UIImageView *)imageView {
     if (!_imageView) {
         _imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
+        _imageView.layer.masksToBounds = YES;
+        _imageView.contentMode = UIViewContentModeScaleAspectFill;
     }
     return _imageView;
 }

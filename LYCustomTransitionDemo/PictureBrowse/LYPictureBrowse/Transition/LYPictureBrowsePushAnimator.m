@@ -41,6 +41,8 @@
     
     //过渡的图片
     UIImageView *transitionImgView = [[UIImageView alloc] initWithImage:self.transitionParameter.transitionImage];
+    transitionImgView.layer.masksToBounds = YES;
+    transitionImgView.contentMode = UIViewContentModeScaleAspectFill;
     transitionImgView.frame = [self.transitionParameter.firstVCImgFrames[self.transitionParameter.transitionImgIndex] CGRectValue];
     [transitionContext.containerView addSubview:transitionImgView];
     

@@ -172,11 +172,12 @@
     
     //过渡的图片
     UIImageView *transitionImgView = [[UIImageView alloc] initWithImage:self.transitionParameter.transitionImage];
-    transitionImgView.clipsToBounds = YES;
+    transitionImgView.layer.masksToBounds = YES;
+    transitionImgView.contentMode = UIViewContentModeScaleAspectFill;
     transitionImgView.frame = self.transitionParameter.currentPanGestImgFrame;
     [containerView addSubview:transitionImgView];
     
-    [UIView animateWithDuration:0.4 delay:0.0 usingSpringWithDamping:0.8 initialSpringVelocity:0.1 options:UIViewAnimationOptionCurveLinear animations:^{
+    [UIView animateWithDuration:0.5 delay:0.0 usingSpringWithDamping:0.8 initialSpringVelocity:0.1 options:UIViewAnimationOptionCurveLinear animations:^{
         
         transitionImgView.frame = self.transitionParameter.firstVCImgFrame;
         bgView.alpha = 0;
