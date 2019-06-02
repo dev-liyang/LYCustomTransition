@@ -28,8 +28,6 @@
     UIViewController *toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     [containerView addSubview:toViewController.view];
     
-    //FromVC
-    UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     CGRect fromFrame = self.transitionParameter.secondVCImgFrame;
     CGRect toFrame = [self.transitionParameter.firstVCImgFrames[self.transitionParameter.transitionImgIndex] CGRectValue];
     
@@ -80,6 +78,8 @@
         [bgView removeFromSuperview];
         [imgBgWhiteView removeFromSuperview];
         [transitionImgView removeFromSuperview];
+        [cutBgView removeFromSuperview];
+        [cutBgView2 removeFromSuperview];
         
         [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
     }];
