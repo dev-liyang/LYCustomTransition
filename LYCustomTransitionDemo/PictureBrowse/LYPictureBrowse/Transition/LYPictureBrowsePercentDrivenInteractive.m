@@ -19,7 +19,6 @@
 @property(nonatomic, strong) UIView *bgView;
 @property(nonatomic, strong) UIView *fromView;
 
-@property(nonatomic, strong) UIView *firstVCImgWhiteView;
 @property(nonatomic, strong) UIView *blackBgView;
 
 @end
@@ -102,11 +101,6 @@
     UIView *toView = toViewController.view;
     [containerView addSubview:toView];
     
-    //图片背景白色的空白view
-    _firstVCImgWhiteView = [[UIView alloc] initWithFrame:self.transitionParameter.firstVCImgFrame];
-    _firstVCImgWhiteView.backgroundColor = [UIColor whiteColor];
-    [containerView addSubview:_firstVCImgWhiteView];
-    
     //有渐变的黑色背景
     _blackBgView = [[UIView alloc] initWithFrame:containerView.bounds];
     _blackBgView.backgroundColor = [UIColor blackColor];
@@ -121,7 +115,6 @@
 
 - (void)updateInterPercent:(CGFloat)scale{
 //        NSLog(@"变化");
-    
     _blackBgView.alpha = scale * scale * scale;
 }
 
@@ -140,9 +133,7 @@
     [containerView addSubview:fromView];
     
     [_blackBgView removeFromSuperview];
-    [_firstVCImgWhiteView removeFromSuperview];
     _blackBgView = nil;
-    _firstVCImgWhiteView = nil;
     
     [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
 }
@@ -159,38 +150,33 @@
     UIView *toView = toViewController.view;
     [containerView addSubview:toView];
     
-    //图片背景白色的空白view
-    UIView *imgBgWhiteView = [[UIView alloc] initWithFrame:self.transitionParameter.firstVCImgFrame];
-    imgBgWhiteView.backgroundColor =[UIColor whiteColor];
-    [containerView addSubview:imgBgWhiteView];
-    
     //有渐变的黑色背景
     UIView *bgView = [[UIView alloc] initWithFrame:containerView.bounds];
     bgView.backgroundColor = [UIColor blackColor];
     bgView.alpha = scale;
     [containerView addSubview:bgView];
     
+    CGRect fromFrame = self.transitionParameter.currentPanGestImgFrame;
+    CGRect toFrame = self.transitionParameter.firstVCImgFrame;
+    
     //过渡的图片
     UIImageView *transitionImgView = [[UIImageView alloc] initWithImage:self.transitionParameter.transitionImage];
     transitionImgView.layer.masksToBounds = YES;
     transitionImgView.contentMode = UIViewContentModeScaleAspectFill;
-    transitionImgView.frame = self.transitionParameter.currentPanGestImgFrame;
+    transitionImgView.frame = fromFrame;
     [containerView addSubview:transitionImgView];
     
     [UIView animateWithDuration:0.5 delay:0.0 usingSpringWithDamping:0.8 initialSpringVelocity:0.1 options:UIViewAnimationOptionCurveLinear animations:^{
         
-        transitionImgView.frame = self.transitionParameter.firstVCImgFrame;
+        transitionImgView.frame = toFrame;
         bgView.alpha = 0;
         
     }completion:^(BOOL finished) {
         
         [_blackBgView removeFromSuperview];
-        [_firstVCImgWhiteView removeFromSuperview];
         _blackBgView = nil;
-        _firstVCImgWhiteView = nil;
         
         [bgView removeFromSuperview];
-        [imgBgWhiteView removeFromSuperview];
         [transitionImgView removeFromSuperview];
         
         [transitionContext completeTransition:![transitionContext transitionWasCancelled]];

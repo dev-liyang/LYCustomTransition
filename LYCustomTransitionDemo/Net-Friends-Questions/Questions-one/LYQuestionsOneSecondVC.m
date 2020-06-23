@@ -39,7 +39,7 @@
     [self.view addSubview:_imgView];
     
     //返回按钮
-    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 20, 60, 44)];
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, kStatusBarHeight, 60, 44)];
     [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [button setImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
     [button addTarget:self action:@selector(backBtnClick:) forControlEvents:UIControlEventTouchUpInside];

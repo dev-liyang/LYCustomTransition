@@ -27,7 +27,7 @@
     self.title = @"WeChat";
     self.view.backgroundColor = bgColor;
     
-    _imgView = [[UIImageView alloc] initWithFrame:CGRectMake(70, 70, 120, 120)];
+    _imgView = [[UIImageView alloc] initWithFrame:CGRectMake(70, 100, 120, 120)];
     _imgView.image = [UIImage imageNamed:@"wechat.jpg"];
     _imgView.userInteractionEnabled = YES;
     [self.view addSubview:_imgView];

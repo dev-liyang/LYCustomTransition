@@ -104,7 +104,7 @@
 
 - (void)createUI
 {
-    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, kScreenWidth, kScreenHeight - 64) style:UITableViewStyleGrouped];
+    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, kNavBarHeight, kScreenWidth, kScreenHeight - kNavBarHeight) style:UITableViewStyleGrouped];
     tableView.backgroundColor = bgColor;
     tableView.delegate = self;
     tableView.dataSource = self;

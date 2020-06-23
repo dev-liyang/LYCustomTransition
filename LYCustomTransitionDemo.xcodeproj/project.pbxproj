@@ -112,6 +112,7 @@
 		B6DBFE4C1F025C2600301429 /* LYModalWeChatInteractiveVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B6DBFE3B1F025C2600301429 /* LYModalWeChatInteractiveVC.m */; };
 		B6DBFE4D1F025C2600301429 /* LYModalWeChatPercentDrivenInteractive.m in Sources */ = {isa = PBXBuildFile; fileRef = B6DBFE3D1F025C2600301429 /* LYModalWeChatPercentDrivenInteractive.m */; };
 		B6F1A84A1EF369A400BD61BE /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B6F1A8491EF369A400BD61BE /* back@2x.png */; };
+		D3AFD4BC24A1B5E9000DDB9D /* UIViewController+hook.m in Sources */ = {isa = PBXBuildFile; fileRef = D3AFD4BB24A1B5E9000DDB9D /* UIViewController+hook.m */; };
 		EE6F8117B384814AB5058E84 /* Pods_LYCustomTransitionDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 008A0845A3D7E3664E545FD1 /* Pods_LYCustomTransitionDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -320,6 +321,8 @@
 		B6DBFE3D1F025C2600301429 /* LYModalWeChatPercentDrivenInteractive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYModalWeChatPercentDrivenInteractive.m; sourceTree = "<group>"; };
 		B6F1A8491EF369A400BD61BE /* back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@2x.png"; sourceTree = "<group>"; };
 		C27A89EA10D842DA93FBF5FA /* Pods-LYCustomTransitionDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYCustomTransitionDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-LYCustomTransitionDemo/Pods-LYCustomTransitionDemo.release.xcconfig"; sourceTree = "<group>"; };
+		D3AFD4BA24A1B5E9000DDB9D /* UIViewController+hook.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+hook.h"; sourceTree = "<group>"; };
+		D3AFD4BB24A1B5E9000DDB9D /* UIViewController+hook.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+hook.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -502,6 +505,8 @@
 				B66422561E607A7200AA95C2 /* PrefixHeader.pch */,
 				B66421AC1E607A3900AA95C2 /* LYCustomTransitonHomeVC.h */,
 				B66421AD1E607A3900AA95C2 /* LYCustomTransitonHomeVC.m */,
+				D3AFD4BA24A1B5E9000DDB9D /* UIViewController+hook.h */,
+				D3AFD4BB24A1B5E9000DDB9D /* UIViewController+hook.m */,
 				B66421A71E607A3900AA95C2 /* CATransition */,
 				B66421D41E607A3900AA95C2 /* Navigation-Transition */,
 				B6DBFE181F025C2600301429 /* Modal-Transition */,
@@ -911,6 +916,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -1100,6 +1106,7 @@
 				B691EB5C1FD638900075532B /* LYPictureBrowseViewController.m in Sources */,
 				B634A8B81F01FA660014AB7C /* LYNavBaseInteractiveSecondVC.m in Sources */,
 				B6DBFE421F025C2600301429 /* LYModalKuGouVC.m in Sources */,
+				D3AFD4BC24A1B5E9000DDB9D /* UIViewController+hook.m in Sources */,
 				B634A8BE1F01FA980014AB7C /* LYNavBasePercentDerivenInteractive.m in Sources */,
 				B66422411E607A3900AA95C2 /* LYNavWeChatInteractivePushAnimator.m in Sources */,
 				B66422421E607A3900AA95C2 /* LYNavWeChatInteractiveSecondVC.m in Sources */,

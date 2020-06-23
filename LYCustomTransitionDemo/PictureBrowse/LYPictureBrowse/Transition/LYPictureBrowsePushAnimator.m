@@ -22,16 +22,9 @@
     
     //ToVC
     UIViewController *toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
-    toViewController.view.hidden = YES;
-    [containerView addSubview:toViewController.view];
-    
-    //FromVC
-    UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
-    
-    //图片背景白色的空白view
-    UIView *imgBgWhiteView = [[UIView alloc] initWithFrame:[self.transitionParameter.firstVCImgFrames[self.transitionParameter.transitionImgIndex] CGRectValue]];
-    imgBgWhiteView.backgroundColor =[UIColor whiteColor];
-    [containerView addSubview:imgBgWhiteView];
+    UIView *toView = toViewController.view;
+    toView.hidden = YES;
+    [containerView addSubview:toView];
     
     //有渐变的黑色背景
     UIView *bgView = [[UIView alloc] initWithFrame:containerView.bounds];
@@ -39,29 +32,30 @@
     bgView.alpha = 0;
     [containerView addSubview:bgView];
     
+    CGRect fromFrame = [self.transitionParameter.firstVCImgFrames[self.transitionParameter.transitionImgIndex] CGRectValue];
+    CGRect toFrame = self.transitionParameter.secondVCImgFrame;
+    
     //过渡的图片
     UIImageView *transitionImgView = [[UIImageView alloc] initWithImage:self.transitionParameter.transitionImage];
     transitionImgView.layer.masksToBounds = YES;
     transitionImgView.contentMode = UIViewContentModeScaleAspectFill;
-    transitionImgView.frame = [self.transitionParameter.firstVCImgFrames[self.transitionParameter.transitionImgIndex] CGRectValue];
-    [transitionContext.containerView addSubview:transitionImgView];
-    
+    transitionImgView.frame = fromFrame;
+    [containerView addSubview:transitionImgView];
     
     //这就是动画啦啦啦
     [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^{
         
-        transitionImgView.frame = self.transitionParameter.secondVCImgFrame;
+        transitionImgView.frame = toFrame;
         bgView.alpha = 1;
         
     } completion:^(BOOL finished) {
         
-        toViewController.view.hidden = NO;
+        toView.hidden = NO;
         
-        [imgBgWhiteView removeFromSuperview];
         [bgView removeFromSuperview];
         [transitionImgView removeFromSuperview];
         
-        //        设置transitionContext通知系统动画执行完毕
+        //设置transitionContext通知系统动画执行完毕
         [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
     }];
     

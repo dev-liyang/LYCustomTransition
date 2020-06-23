@@ -42,11 +42,11 @@
     _imgView.userInteractionEnabled = YES;
     [self.view addSubview:_imgView];
     
-    UIView *navView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 64)];
+    UIView *navView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kNavBarHeight)];
     navView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:navView];
     
-    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(10, 20, 44, 44)];
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(10, kStatusBarHeight, 44, 44)];
     [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [button setTitle:@"返回" forState:UIControlStateNormal];
     [button addTarget:self action:@selector(backBtnClick:) forControlEvents:UIControlEventTouchUpInside];

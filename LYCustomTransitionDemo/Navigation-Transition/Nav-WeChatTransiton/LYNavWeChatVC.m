@@ -35,7 +35,7 @@
     size.height = 120;
     size.width = size.height / img.size.height * img.size.width;
     
-    _imgView = [[UIImageView alloc] initWithFrame:CGRectMake(70, 70, size.width, size.height)];
+    _imgView = [[UIImageView alloc] initWithFrame:CGRectMake(70, 100, size.width, size.height)];
     _imgView.image = img;
     _imgView.userInteractionEnabled = YES;
     [self.view addSubview:_imgView];

@@ -96,7 +96,7 @@
 #pragma mark - Setter - Getter
 - (UITableView *)tableView{
     if (!_tableView) {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, kScreenWidth, kScreenHeight - 64) style:UITableViewStylePlain];
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, kNavBarHeight, kScreenWidth, kScreenHeight - kNavBarHeight) style:UITableViewStylePlain];
         _tableView.backgroundColor = [UIColor colorWithRed:0.1 green:0.7 blue:0.4 alpha:1];
         _tableView.delegate = self;
         _tableView.dataSource = self;
