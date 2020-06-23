@@ -8,8 +8,8 @@
 
 #import "LYPictureFirstVC.h"
 #import "LYPictureFirstPageCell.h"
-
 #import "LYPictureBrowse.h"
+#import <SDWebImage/UIImage+GIF.h>
 
 #define CellImageSize (kScreenWidth - 2 * 5)/ 3.0
 
@@ -47,30 +47,25 @@
     self.imageDataArray = [NSMutableArray array];
     
     //构造图片数据
-    for (int i = 1; i <= 13; i ++) {
+    for (int i = 1; i <= 30; i ++) {
         
-        NSString *path = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"Expression%.2d",i] ofType:@"jpeg"];
-        UIImage *img = [UIImage imageWithContentsOfFile:path];
+        NSString *path = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"Expression%.2d",(i-1)%15+1] ofType:@"jpeg"];
+        NSString *gifPath = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"Expression%.2d",(i-1)%15+1] ofType:@"gif"];
         
-        NSDictionary *imgDic = @{@"image" : img,
+        UIImage *img;
+        if (path) {
+            img = [UIImage imageWithContentsOfFile:path];
+        } else {
+            NSData *imageData = [NSData dataWithContentsOfFile:gifPath];
+            img = [UIImage sd_animatedGIFWithData:imageData];
+        }
+
+        NSDictionary *imgDic = @{@"image" : img?:[UIImage new],
                                  //@"imgUrl" : [NSString stringWithFormat:@"https://xxx.jpg",i],
                                  //@"imgUrl_thumb" : [NSString stringWithFormat:@"https://xxx_thumb.jpg",i]
-                                 };
-        
+                                  };
         [self.imageDataArray addObject:imgDic];
-    }
-    //构造图片数据
-    for (int i = 1; i <= 13; i ++) {
         
-        NSString *path = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"Expression%.2d",i] ofType:@"jpeg"];
-        UIImage *img = [UIImage imageWithContentsOfFile:path];
-        
-        NSDictionary *imgDic = @{@"image" : img,
-                                 //@"imgUrl" : [NSString stringWithFormat:@"https://xxx.jpg",i],
-                                 //@"imgUrl_thumb" : [NSString stringWithFormat:@"https://xxx_thumb.jpg",i]
-                                 };
-        
-        [self.imageDataArray addObject:imgDic];
     }
 }
 
